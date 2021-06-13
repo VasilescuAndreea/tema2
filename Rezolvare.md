@@ -39,6 +39,32 @@
 - Open Shortest Path First 
 - Border Gateway Protocol Routing 
 
+### 2.1 Forwarding vs Routing 
+Network layer-ele fiecarui nod au 2 parti 
+	1. Routing Algorithm: determina path-ul end to end prin retea ( Cum sa ajung dintr-un nod particular, in orice alt nod din retea). 
+	2. Local Forwarding table
+
+Algoritmul de routare determina path-ul end to end prin retea ( Cum sa ajung dintr-un nod particular, in orice alt nod din retea). Odata ce acest algoritm se executa la un anumit nod, acesta populeaza local forwarding table (o masa de redirectionare locala)  la nod.
+
+Forwarding = procesul fizic de mutare al unui pachet de la o  interfata de nod, la interfata de iesire a altui nod 
+
+Forwarding table = determina actiunea de redirectionare locala la fiecare router
+
+In desen este un pachet care ajunge, iar inputul interfetei acestui nod este marcat cu 1 2 si 3, deoarece sunt trei interfete de iesire pentru acest nod. Orice alt pachet care ajuinge la acest nod trebuie sa plece prin 1, 2 sau 3. 
+
+CE FACE ROUTING ALGORITHM?  Spune care pachet merge pe lungimea 3, care merge cu lungimea 2 si care merge cu lungimea 1. 
+
+ROUTING & FORWARDING, CUM INTERACTIONEAZA ACESTEA
+Odata executat algoritmul de routare, vor fi determinate urmatoarele: pentru acest interval de adrese, care este marcat in tabela ca avand intervalul de adresa 1, va trimite toate acele tabele care sunt destinate intervalului de adrese 1, impreuna cu lungimea de iesire 3. Pentru pachetele care sunt destinate pentru intervalul de adresa 2 si 3, trimite impreuna cu lungimea de iesire 2, iar pentru toate celelalte adrese, va trimite impreuna cu 1. 
+
+
+### 2.2 Link State Routing
+
+Conceputl de baza al Link State Routing ( ruta de legatura-stare) este ca fiecare nod construieste o harta a conectivitatii la retea, sub forma de grafic, care arata ce noduri sunt conectate la celelalte noduri din retea. Fiecare nod calculeaza apoi in mod independen umrmatoarea cea mai buna cale logica de la acest nod la fiecare destinatie posibila din retea. 
+
+Pentru a avea un algoritm link state care sa functioneze, nodul trebuie sa stie reteaua completa si topologia( trebuie sa aiba imaginea completa a network-ului).  Pentru a avea cunostinte globale, trebuie transmise toate informatiile despre legatura catre toata lumea. Apoi, fieca poate independent sa ruleze acelasi algoritm, folosind aceleasi informatii de inputz, c`eea ce inseamna ca, costul fiecarei lezgaturi este preluat cu acelasi rezultat. 
+
+
 <a name="http"></a> 
 ### HTTP API
 
